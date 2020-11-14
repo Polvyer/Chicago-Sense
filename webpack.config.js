@@ -11,11 +11,24 @@ module.exports = {
   },
   devtool: 'inline-source-map', // makes it easier to track down errors and warnings
   devServer: {
-    contentBase: './dist',
+    contentBase: './src/public',
     watchContentBase: true,
   },
   plugins: [
-    new PrettierPlugin()
+    new PrettierPlugin(),
+    new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }), // we don't want to remove the index.html file after the incremental build triggered by watch
+    new HtmlWebpackPlugin({
+      filename: 'register.html',
+      chunks: ['register'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/register.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      chunks: ['index'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/index.html',
+    }),
   ],
   output: {
     filename: '[name].bundle.js',
