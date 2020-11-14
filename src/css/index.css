@@ -106,15 +106,18 @@ input {
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
 }
+
 .account-info {
   padding: 20px 20px 0 20px;
 }
+
 .account-info label {
   color: #395870;
   display: block;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .account-info input {
   background: #fff;
   border: 1px solid #c6c7cc;
@@ -124,11 +127,13 @@ input {
   margin-top: 6px;
   width: 100%;
 }
+
 .account-action {
   background: #f0f0f2;
   border-top: 1px solid #c6c7cc;
   padding: 3px 20px 10px 20px;
 }
+
 .account-action .btn {
   background: linear-gradient(#49708f, #293f50);
   border: 0;

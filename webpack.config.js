@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     register: './src/register.js',
+    home: './src/home.js',
   },
   devtool: 'inline-source-map', // makes it easier to track down errors and warnings
   devServer: {
@@ -17,6 +18,12 @@ module.exports = {
   plugins: [
     new PrettierPlugin(),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }), // we don't want to remove the index.html file after the incremental build triggered by watch
+    new HtmlWebpackPlugin({
+      filename: 'home.html',
+      chunks: ['home'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/home.html',
+    }),
     new HtmlWebpackPlugin({
       filename: 'register.html',
       chunks: ['register'],
