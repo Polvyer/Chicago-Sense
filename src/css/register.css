@@ -1,20 +1,20 @@
-@font-face {
-  font-family: "Open Sans";
-  src: url("../fonts/OpenSans-Regular.ttf") format("ttf");
-  font-weight: 400;
-  font-style: normal;
+.header {
+  height: 100vh; /* out of 100 */
+  background-image: linear-gradient(
+      to right,
+      rgba(67, 48, 133, 0.8),
+      rgba(58, 65, 62, 0.692)
+    ),
+    url("../images/chicago.jpg");
+  background-size: cover; /* try to fit width of viewport or element */
+  background-position: top; /* top of img stays atop container */
+  position: relative;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans";
-}
-
-.hello {
-  color: green;
+.text-box {
+  position: absolute;
+  top: 50%; /* from parent element */
+  left: 50%; /* from parent element */
+  transform: translate(-50%, -50%); /* from itself (top-left corner entry) */
+  text-align: center;
 }
