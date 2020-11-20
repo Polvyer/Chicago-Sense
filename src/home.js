@@ -13,7 +13,6 @@ function logout(e) {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    window.stop();
     console.log(user);
     alert("User is signed in");
     var uid = user.uid;

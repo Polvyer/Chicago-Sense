@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "./Input";
-import { f as firebase } from "../firebase";
+import Error from "./Error";
+import { f as firebase, db } from "../firebase";
 
 const Form = () => {
   const [user, setUser] = useState({
@@ -11,6 +12,18 @@ const Form = () => {
     password: "",
     confirm: "",
   });
+
+  const [error, setError] = useState({
+    display: false,
+    message: "",
+  });
+
+  const toggleError = (message) => {
+    setError({
+      display: !error.display,
+      message: message,
+    });
+  };
 
   const changeField = (key) => (e) => {
     const newUser = {
@@ -63,42 +76,63 @@ const Form = () => {
   const addUser = (e) => {
     e.preventDefault();
     if (user.password !== user.confirm) {
-      alert("Passwords must match!");
+      toggleError("Password does not match");
       return;
     }
+
     firebase
       .auth()
       .createUserWithEmailAndPassword(user.email, user.password)
-      .then((user) => {
-        window.location = "./home.html";
+      .then((u) => {
+        db.collection("users")
+          .add({
+            email: user.email,
+            firstName: user.fName,
+            lastName: user.lName,
+            username: user.username,
+          })
+          .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+            window.location = "./home.html";
+          })
+          .catch(function (error) {
+            console.log(error);
+            console.error("Error adding document: ", error);
+            toggleError("Error adding document");
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        toggleError(errorMessage);
       });
   };
 
   return (
-    <form onSubmit={addUser}>
-      <fieldset className="account-info">
-        {fields.map((field) => (
-          <Input
-            key={field.name}
-            name={field.name}
-            type={field.type}
-            field={field.field}
-            short={field.short}
-            changeField={changeField}
-          />
-        ))}
-      </fieldset>
-      <fieldset className="account-action">
-        <button className="btn" type="submit" name="submit" value="Login">
-          Register
-        </button>
-      </fieldset>
-    </form>
+    <>
+      {error.display ? (
+        <Error errorMessage={error.message} toggleError={toggleError} />
+      ) : null}
+      <form onSubmit={addUser}>
+        <fieldset className="account-info">
+          {fields.map((field) => (
+            <Input
+              key={field.name}
+              name={field.name}
+              type={field.type}
+              field={field.field}
+              short={field.short}
+              changeField={changeField}
+            />
+          ))}
+        </fieldset>
+        <fieldset className="account-action">
+          <button className="btn" type="submit" name="submit" value="Login">
+            Register
+          </button>
+        </fieldset>
+      </form>
+    </>
   );
 };
 

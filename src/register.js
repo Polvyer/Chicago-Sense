@@ -1,4 +1,4 @@
-/* CSS (import as many CSS files as you need) */
+/* CSS */
 import "./css/reset.css";
 import "./css/register.css";
 

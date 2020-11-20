@@ -118,3 +118,12 @@ input {
   margin-top: 10px;
   color: white;
 }
+
+.account-register a {
+  color: turquoise;
+  text-decoration: none;
+}
+
+.account-register a:active {
+  color: turquoise;
+}

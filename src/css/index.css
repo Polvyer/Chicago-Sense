@@ -49,6 +49,12 @@
   animation: moveInRight 2s ease-out;
 }
 
+@media screen and (max-width: 400px) {
+  .heading-primary-main {
+    letter-spacing: 10px;
+  }
+}
+
 /* it's best to only animate two properties (opacity, transform) */
 @keyframes moveInLeft {
   0% {
@@ -192,4 +198,13 @@ input {
   display: block;
   margin-top: 10px;
   color: white;
+}
+
+.account-register a {
+  color: turquoise;
+  text-decoration: none;
+}
+
+.account-register a:active {
+  color: turquoise;
 }
