@@ -10,23 +10,33 @@
 
     <title>Browse</title>
   </head>
+  <script>
+    function changePage() {
+      console.log("Hiiii");
+    }
+  </script>
+
   <body>
     <header class="header">
       <div class="column">
-        <div class="chicago">CHICAGO SENSE</div>
+        <div id="demo" class="chicago">CHICAGO SENSE</div>
         <div class="chicagoh2">Search our catalog directly</div>
+        <div class="searchContainer">
+          <input type="text" placeholder="Search..." class="searchBar" />
+          <button type="submit" class="searchButton"></button>
+        </div>
+
+        <div class="chicagoh3">Or...</div>
+        <div class="chicagoh2">Let Chicagoans help you decide</div>
         <div>
-          <input type="text" id="searchBar" name="searchBar" /><button
+          <button
+            onclick="window.location.href='index.html'"
+            class="buttons"
             type="button"
           >
-            Click Me!
+            Plan Trip
           </button>
-        </div>
-        <div>Or...</div>
-        <div>Let Chicagoans help you decide</div>
-        <div>
-          <button type="button">Plan Trip</button>
-          <button type="button">Browse</button>
+          <button class="buttons" type="button">Browse</button>
         </div>
       </div>
     </header>
