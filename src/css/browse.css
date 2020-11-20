@@ -11,6 +11,30 @@
   position: relative;
 }
 
+.column {
+  padding-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 70%;
+}
+
+.chicago {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden; /* fixes shaking in animation */
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 60px;
+}
+
+.chicagoh2 {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden; /* fixes shaking in animation */
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
 .text-box {
   position: absolute;
   top: 50%; /* from parent element */
