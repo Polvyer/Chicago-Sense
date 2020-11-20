@@ -9,6 +9,14 @@ module.exports = {
     index: './src/index.js',
     register: './src/register.js',
     home: './src/home.js',
+    browse: './src/browse.js',
+    activity: './src/activity.js',
+    priority: './src/priority.js',
+    food: './src/food.js',
+    plan_trip: './src/plan_trip.js',
+    musical: './src/musical.js',
+    date_select: './src/date_select.js',
+    results: './src/results.js',
   },
   devtool: 'inline-source-map', // makes it easier to track down errors and warnings
   devServer: {
@@ -18,6 +26,54 @@ module.exports = {
   plugins: [
     new PrettierPlugin(),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }), // we don't want to remove the index.html file after the incremental build triggered by watch
+    new HtmlWebpackPlugin({
+      filename: 'results.html',
+      chunks: ['results'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/results.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'date_select.html',
+      chunks: ['date_select'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/date_select.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'musical.html',
+      chunks: ['musical'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/musical.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'plan_trip.html',
+      chunks: ['plan_trip'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/plan_trip.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'food.html',
+      chunks: ['food'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/food.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'priority.html',
+      chunks: ['priority'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/priority.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'activity.html',
+      chunks: ['activity'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/activity.html',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'browse.html',
+      chunks: ['browse'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/browse.html',
+    }),
     new HtmlWebpackPlugin({
       filename: 'home.html',
       chunks: ['home'],
