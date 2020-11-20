@@ -1,18 +1,32 @@
 /* Firebase */
-import { f } from "./firebase";
+import { f as firebase } from "./firebase";
 
 /* CSS */
 import "./css/reset.css";
 import "./css/index.css";
 
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAbBLFWMfjWFqAzmRU8J5h7DHH0bDesYzU",
-  authDomain: "chicago-sense.firebaseapp.com",
-  databaseURL: "https://chicago-sense.firebaseio.com",
-  projectId: "chicago-sense",
-  storageBucket: "chicago-sense.appspot.com",
-  messagingSenderId: "448695709527",
-  appId: "1:448695709527:web:0317d5ce41565937311812",
-  measurementId: "G-VRPVS0PHMV",
-};
+function signIn(e) {
+  e.preventDefault();
+  const input = document.querySelectorAll("input");
+  const email = input[0].value;
+  const password = input[1].value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then((user) => {
+      console.log(user);
+      window.location = "./home.html";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+
+  console.log(name, password);
+  // action="./home.html"
+}
+
+const form = document.querySelector("form");
+form.addEventListener("submit", signIn);
