@@ -17,6 +17,7 @@ module.exports = {
     musical: './src/musical.js',
     date_select: './src/date_select.js',
     results: './src/results.js',
+    pizza: './src/pizza.js',
   },
   devtool: 'inline-source-map', // makes it easier to track down errors and warnings
   devServer: {
@@ -26,6 +27,12 @@ module.exports = {
   plugins: [
     new PrettierPlugin(),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }), // we don't want to remove the index.html file after the incremental build triggered by watch
+    new HtmlWebpackPlugin({
+      filename: 'pizza.html',
+      chunks: ['pizza'],
+      favicon: './src/images/bean_icon.png',
+      template: './src/public/pizza.html',
+    }),
     new HtmlWebpackPlugin({
       filename: 'results.html',
       chunks: ['results'],
