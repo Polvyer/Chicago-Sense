@@ -11,15 +11,16 @@
   color: white;
   margin-bottom: 15px;
   position: fixed;
-  top: 0;
+  top: 4vh;
   transform: translateX(-50%);
   left: 50%;
-  width: 200px;
+  width: 300px;
+  z-index: 10;
 }
 
 @media all and (max-width: 625px) {
   .alert {
-    top: 4vh;
+    top: 2vh;
   }
 }
 

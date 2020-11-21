@@ -5,7 +5,7 @@ const Error = ({ errorMessage, toggleError }) => {
   return (
     //"this.parentElement.style.display='none'"
     <div className="alert">
-      <span className="closebtn" onClick={toggleError.bind(null, "")}>
+      <span className="closebtn" onClick={toggleError}>
         &times;
       </span>
       {errorMessage}
