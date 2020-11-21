@@ -1,0 +1,218 @@
+.header {
+  height: 100vh; /* out of 100 */
+  background-image: linear-gradient(
+      to right,
+      rgba(67, 48, 133, 0.8),
+      rgba(58, 65, 62, 0.692)
+    ),
+    url("../images/chicago.jpg");
+  background-size: cover; /* try to fit width of viewport or element */
+  background-position: top; /* top of img stays atop container */
+  position: relative;
+}
+
+.column {
+  padding-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 70%;
+}
+
+.chicago {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden; /* fixes shaking in animation */
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  font-size: 50px;
+  font-weight: 800;
+  letter-spacing: 20px;
+  line-height: 1.3;
+}
+
+.calendarButton {
+  min-height: 55px;
+  width: 55px;
+  vertical-align: middle;
+  background: url("../images/calendar.png");
+  background-size: cover;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.chicagoh2 {
+  color: #fff;
+  text-transform: uppercase;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 20px;
+  backface-visibility: hidden; /* fixes shaking in animation */
+  margin-bottom: 10px;
+  font-size: 24px;
+
+  font-weight: 800;
+  letter-spacing: 8px;
+  line-height: 1.3;
+}
+
+.chicagoh3 {
+  color: #fff;
+  text-transform: uppercase;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  backface-visibility: hidden; /* fixes shaking in animation */
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-size: 18px;
+
+  font-weight: 800;
+  letter-spacing: 8px;
+  line-height: 1.3;
+}
+
+.searchContainer {
+  height: 55px;
+  vertical-align: middle;
+}
+.searchBar {
+  position: relative;
+  min-height: 100%;
+  width: 600px;
+  vertical-align: middle;
+  font-size: 26px;
+}
+
+.searchButton {
+  min-height: 100%;
+  width: 55px;
+  vertical-align: middle;
+  background: url("../images/magnifyingglass.png");
+  background-size: cover;
+  background-color: white;
+}
+
+.buttons {
+  min-height: 200px;
+  width: 300px;
+  vertical-align: middle;
+  background-size: cover;
+  background-color: white;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  font-weight: 800;
+  letter-spacing: 8px;
+  line-height: 1.3;
+}
+
+.text-box {
+  position: absolute;
+  top: 50%; /* from parent element */
+  left: 50%; /* from parent element */
+  transform: translate(-50%, -50%); /* from itself (top-left corner entry) */
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  backface-visibility: hidden; /* fixes shaking in animation */
+  margin-bottom: 10px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1.1;
+}
+
+form {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 240px;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+.account-info {
+  padding: 20px 20px 0 20px;
+}
+
+.account-info label {
+  color: #395870;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.account-info input {
+  background: #fff;
+  border: 1px solid #c6c7cc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  color: #636466;
+  padding: 6px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.account-action {
+  background: #f0f0f2;
+  border-top: 1px solid #c6c7cc;
+  padding: 8px 20px 10px 20px;
+}
+
+.account-action .btn {
+  background: linear-gradient(#49708f, #293f50);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+.account-action .btn:link,
+.account-action .btn:visited {
+  transition: all 0.2s; /* initial state */
+  position: relative;
+  outline: none;
+}
+
+.account-action .btn:hover {
+  transform: translateY(-3px); /* goes up 3px */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* (x, y, blur, color) */
+}
+
+.account-action .btn:focus {
+  outline: none;
+}
+
+.account-action .btn:active {
+  outline: none;
+  transform: translateY(-1px); /* goes up 1 px */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* (x, y, blur, color) */
+}
+
+.browse {
+  display: block;
+  margin-top: 10px;
+  color: white;
+}
