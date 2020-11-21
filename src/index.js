@@ -16,7 +16,7 @@ function signIn(e) {
     .signInWithEmailAndPassword(email, password)
     .then((user) => {
       console.log(user);
-      window.location = "./browse.html";
+      window.location = "./home.html";
     })
     .catch((error) => {
       const errorCode = error.code;
