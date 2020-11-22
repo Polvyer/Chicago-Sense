@@ -10,33 +10,33 @@
 
     <title>Date and Time</title>
   </head>
+  <script src="date_select.js"></script>
+  var value = 1;
 
   <body>
     <header class="header">
       <div class="column">
         <div class="chicago">TRIP PLANNER</div>
         <div class="chicagoh2">When?</div>
-        <div>
-          <button
-            onclick="window.location.href='date_select.html'"
-            class="buttons"
-            type="button"
-          >
-            Plan Trip
-          </button>
-          <button class="calendarButton"></button>
-          
-
-
-          
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          value="2020-11-21"
+          min="2020-11-21"
+          max="2022-12-31"
+          class="time"
+        />
 
         <div class="chicagoh2">How Long?</div>
         <div>
-          <button>L</button>
-          <button type="TODAY" class="searchButton"></button>
-          <button>R</button>
+          <button id="arrowL" class="arrow L">L</button>
+          <button class="time" type="TODAY" class="searchButton">
+            <var id="value" value="TODAY">Just a day</var>
+          </button>
+          <button id="arrowR" class="arrow"></button>
         </div>
-        <button>Continue</button>
+        <button class="continueButton">✓</button>
       </div>
     </header>
   </body>

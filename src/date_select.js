@@ -9,6 +9,67 @@ import "./css/date_select.css";
 /* Images (import as many images as you need) */
 //import Chicago from "./images/chicago.png";
 
+let value = document.getElementById("value");
+let number = 1;
+
+document.getElementById("arrowR").onclick = function () {
+  incrementNumber();
+};
+
+document.getElementById("arrowL").onclick = function () {
+  decrementNumber();
+};
+
+function incrementNumber() {
+  number < 10 ? number++ : (number = number);
+
+  switch (number) {
+    case 1:
+      value.innerHTML = "Just a day";
+      break;
+    case 7:
+      value.innerHTML = "A week";
+      break;
+    case 8:
+      value.innerHTML = "A fortnight";
+      break;
+    case 9:
+      value.innerHTML = "A month";
+      break;
+    case 10:
+      value.innerHTML = "A really long time";
+      break;
+    default:
+      value.innerHTML = number + " days";
+  }
+}
+
+function decrementNumber() {
+  number != 1 ? number-- : (number = number);
+
+  switch (number) {
+    case 1:
+      value.innerHTML = "Just a day";
+      break;
+    case 7:
+      value.innerHTML = "A week";
+      break;
+    case 8:
+      value.innerHTML = "A fortnight";
+      break;
+    case 9:
+      value.innerHTML = "A month";
+      break;
+    case 10:
+      value.innerHTML = "A really long time";
+      break;
+    default:
+      value.innerHTML = number + " days";
+  }
+}
+const arrow = document.querySelector("arrow");
+arrow.addEventListener("click", logout);
+
 $(document).ready(function () {
-  $("#js-date").datepicker();
+  console.log("before datepicker");
 });
