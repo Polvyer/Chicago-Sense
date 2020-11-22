@@ -110,9 +110,14 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   module: {
     rules: [
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -136,6 +141,7 @@ module.exports = {
             postcssOptions: {
               plugins: function () { // postcss plugins, can be exported to
                 return [
+                  require('precss'),
                   require('autoprefixer')
                 ];
               }

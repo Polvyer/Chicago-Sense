@@ -8,9 +8,34 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Date select</title>
+    <title>Date and Time</title>
   </head>
+
   <body>
-    <h1>Date select</h1>
+    <header class="header">
+      <div class="column">
+        <div class="chicago">TRIP PLANNER</div>
+        <div class="chicagoh2">When?</div>
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          value="2020-11-21"
+          min="2020-11-21"
+          max="2022-12-31"
+          class="time"
+        />
+
+        <div class="chicagoh2">How Long?</div>
+        <div>
+          <button id="arrowL" class="arrow L">L</button>
+          <button class="time" type="TODAY" class="searchButton">
+            <var id="value" value="TODAY">Just a day</var>
+          </button>
+          <button id="arrowR" class="arrow"></button>
+        </div>
+        <button class="continueButton">✓</button>
+      </div>
+    </header>
   </body>
 </html>

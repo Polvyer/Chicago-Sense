@@ -4,6 +4,22 @@ import { f as firebase, db, firebase as f } from "./firebase";
 /* CSS */
 import "./css/reset.css";
 import "./css/index.css";
+import "./css/error.css";
+
+/* React */
+import ReactDOM from "react-dom";
+import React, { useState } from "react";
+import Error from "./components/Error";
+
+const toggleError = () => {
+  ReactDOM.unmountComponentAtNode(error);
+};
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    window.location = "./home.html";
+  }
+});
 
 function signIn(e) {
   e.preventDefault();
@@ -21,7 +37,13 @@ function signIn(e) {
       .then((user) => {
         window.location = "./home.html";
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        console.log(error.message);
+        ReactDOM.render(
+          <Error errorMessage={error.message} toggleError={toggleError} />,
+          document.getElementById("root")
+        );
+      });
     return;
   }
 
@@ -32,8 +54,16 @@ function signIn(e) {
     .then((user) => {
       window.location = "./home.html";
     })
-    .catch((error) => alert(error.message));
+    .catch((error) => {
+      console.log(error.message);
+      ReactDOM.render(
+        <Error errorMessage={error.message} toggleError={toggleError} />,
+        document.getElementById("root")
+      );
+    });
 }
 
 const form = document.querySelector("form");
 form.addEventListener("submit", signIn);
+
+const error = document.getElementById("root");
