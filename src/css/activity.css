@@ -1,0 +1,46 @@
+.header {
+  height: 100vh; /* out of 100 */
+  background-image: linear-gradient(
+      to right,
+      rgba(67, 48, 133, 0.8),
+      rgba(58, 65, 62, 0.692)
+    ),
+    url("../images/chicago.jpg");
+  background-size: cover; /* try to fit width of viewport or element */
+  background-position: top; /* top of img stays atop container */
+  position: relative;
+}
+
+#wheelDiv {
+  position: absolute;
+  top: 30%; /* from parent element */
+  left: 50%; /* from parent element */
+  transform: translate(-35%, 0%); /* from itself (top-left corner entry) */
+  text-align: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: visible;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 10;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
