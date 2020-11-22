@@ -3,11 +3,8 @@ import "bootstrap";
 import "./scss/bootstrap.scss";
 
 /* CSS (import as many CSS files as you need) */
-//import "./css/reset.css";
+import "./css/reset.css";
 import "./css/date_select.css";
-
-/* Images (import as many images as you need) */
-//import Chicago from "./images/chicago.png";
 
 let value = document.getElementById("value");
 let number = 1;
