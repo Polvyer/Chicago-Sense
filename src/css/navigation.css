@@ -1,0 +1,61 @@
+/* The sidebar menu */
+.nav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 30px;
+  margin-left: 60px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-width: 1100px) {
+  .nav {
+    display: none;
+  }
+}
+
+.nav-stop {
+  height: 30px;
+  width: fit-content;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.nav-stop-outer-dot {
+  background-color: #00a1de;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-stop-inner-dot {
+  background-color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.nav-stop-text {
+  color: #00a1de;
+  margin-top: 0.09em;
+  margin-left: 3px;
+  font-size: 1.4rem;
+}
+
+.vl {
+  border-left: 10px solid #00a1de;
+  height: 25px;
+  margin-left: 14.5px;
+}
+
+.alert {
+  background-color: green;
+}

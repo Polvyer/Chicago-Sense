@@ -1,9 +1,3 @@
-@media all and (min-width: 600px) {
-  .alert {
-    background-color: green;
-  }
-}
-
 /* The alert message box */
 .alert {
   padding: 20px;

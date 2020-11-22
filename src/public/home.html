@@ -8,7 +8,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Browse</title>
+    <title>Home</title>
   </head>
   <script>
     function changePage() {
@@ -17,27 +17,35 @@
   </script>
 
   <body>
+    <!-- Side navigation -->
+    <div id="root" class="nav"></div>
+
+    <span id="error"></span>
+
     <header class="header">
+      <div id="signOut">Sign out</div>
       <div class="column">
         <div id="demo" class="chicago">CHICAGO SENSE</div>
+        <div id="user"></div>
         <div class="chicagoh2">Search our catalog directly</div>
         <div class="searchContainer">
           <input type="text" placeholder="Search..." class="searchBar" />
-          <button type="submit" class="searchButton"></button>
+          <button
+            onclick="window.location.href='./pizza.html'"
+            type="submit"
+            class="searchButton"
+          ></button>
         </div>
 
-        <div class="chicagoh3">Or...</div>
+        <div class="chicagoh3">Or</div>
         <div class="chicagoh2">Let Chicagoans help you decide</div>
-        <div>
-          <button
-            onclick="window.location.href='index.html'"
-            class="buttons"
-            type="button"
-          >
-            Plan Trip
-          </button>
-          <button class="buttons" type="button">Browse</button>
-        </div>
+        <button
+          onclick="window.location.href='./plan_trip.html'"
+          class="buttons"
+          type="button"
+        >
+          Plan Trip
+        </button>
       </div>
     </header>
   </body>

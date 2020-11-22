@@ -54,7 +54,13 @@ function signIn(e) {
     .then((user) => {
       window.location = "./home.html";
     })
-    .catch((error) => alert(error.message));
+    .catch((error) => {
+      console.log(error.message);
+      ReactDOM.render(
+        <Error errorMessage={error.message} toggleError={toggleError} />,
+        document.getElementById("root")
+      );
+    });
 }
 
 const form = document.querySelector("form");
