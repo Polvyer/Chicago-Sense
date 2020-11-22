@@ -4,7 +4,7 @@ import Stop from "./Stop";
 const Navigation = ({ stops }) => {
   const addLine = (index) => {
     if (stops.length !== index + 1) {
-      return <div class="vl"></div>;
+      return <div className="vl"></div>;
     }
     return null;
   };

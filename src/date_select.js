@@ -1,10 +1,49 @@
-/* Needed for Bootstrap (remove if you don't want to use bootstrap) */
-import "bootstrap";
-import "./scss/bootstrap.scss";
+/* Firebase */
+import { f as firebase, db } from "./firebase";
 
-/* CSS (import as many CSS files as you need) */
+/* CSS */
 import "./css/reset.css";
+import "./css/signout.css";
+import "./css/error.css";
+import "./css/navigation.css";
 import "./css/date_select.css";
+
+/* React */
+import ReactDOM from "react-dom";
+import React from "react";
+import Navigation from "./components/Navigation";
+import Error from "./components/Error";
+
+const toggleError = () => {
+  ReactDOM.unmountComponentAtNode(error);
+};
+
+const stops = [
+  {
+    name: "Home",
+    link: "./home.html",
+  },
+  {
+    name: "Plan Trip",
+    link: "./date_select.html",
+  },
+];
+
+ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
+
+function logout(e) {
+  ReactDOM.render(
+    <Error errorMessage="Signing out" toggleError={toggleError} />,
+    document.getElementById("error")
+  );
+  firebase.auth().signOut();
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    window.location = "./index.html";
+  }
+});
 
 let value = document.getElementById("value");
 let number = 1;
@@ -64,9 +103,13 @@ function decrementNumber() {
       value.innerHTML = number + " days";
   }
 }
-const arrow = document.querySelector("arrow");
-arrow.addEventListener("click", logout);
 
-$(document).ready(function () {
-  console.log("before datepicker");
-});
+const advance = () => {
+  window.location = "./activity.html";
+};
+
+const signOut = document.getElementById("signOut");
+signOut.addEventListener("click", logout);
+
+const checkmark = document.querySelector(".continueButton");
+checkmark.addEventListener("click", advance);

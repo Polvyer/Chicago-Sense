@@ -12,7 +12,14 @@
   </head>
 
   <body>
+    <!-- Side navigation -->
+    <div id="root" class="nav"></div>
+
+    <!-- Error -->
+    <span id="error"></span>
+
     <header class="header">
+      <div id="signOut">Sign out</div>
       <div class="column">
         <div class="chicago">TRIP PLANNER</div>
         <div class="chicagoh2">When?</div>
@@ -27,7 +34,7 @@
         />
 
         <div class="chicagoh2">How Long?</div>
-        <div>
+        <div class="container">
           <button id="arrowL" class="arrow L">L</button>
           <button class="time" type="TODAY" class="searchButton">
             <var id="value" value="TODAY">Just a day</var>

@@ -6,6 +6,7 @@ import "./css/reset.css";
 import "./css/home.css";
 import "./css/error.css";
 import "./css/navigation.css";
+import "./css/signout.css";
 
 /* React */
 import ReactDOM from "react-dom";
