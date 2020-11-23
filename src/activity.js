@@ -126,7 +126,7 @@ wheel.lineSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
 wheel.titleSelectedAttr = { fill: "#9CF" };
 
 wheel.navItems[0].navigateFunction = function () {
-  setTimeout("window.open('./food.html', '_top')", 2000);
+  setTimeout("window.open('./priority.html?activity=food', '_top')", 2000);
 };
 wheel.navItems[1].navigateFunction = function () {
   setTimeout("window.open('./404.html', '_top')", 2000);
@@ -135,7 +135,7 @@ wheel.navItems[2].navigateFunction = function () {
   setTimeout("window.open('./404.html', '_top')", 2000);
 };
 wheel.navItems[3].navigateFunction = function () {
-  setTimeout("window.open('musical.html', '_top')", 2000);
+  setTimeout("window.open('priority.html?activity=entertain', '_top')", 2000);
 };
 wheel.refreshWheel();
 
