@@ -43,6 +43,10 @@
   align-items: center;
 }
 
+.nav-stop-outer-dot:hover {
+  animation: pulse 2s infinite;
+}
+
 .nav-stop-outer-dot-end {
   background-color: orange;
   width: 40px;
@@ -61,6 +65,23 @@
   margin: 0 auto;
 }
 
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
 .nav-stop-inner-dot-end {
   background-color: orangered;
   width: 28px;
@@ -75,6 +96,10 @@
   margin-top: 0.09em;
   margin-left: 3px;
   font-size: 1.4rem;
+}
+
+.nav-stop-text:hover {
+  text-decoration: underline;
 }
 
 .nav-stop-text-end {

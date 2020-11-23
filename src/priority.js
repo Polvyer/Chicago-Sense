@@ -1,17 +1,21 @@
+/* Firebase */
 import { f as firebase, db } from "./firebase";
 
 /* CSS */
 import "./css/reset.css";
 import "./css/activity.css";
+import "./css/error.css";
 import "./css/navigation.css";
 import "./css/signout.css";
-import "./css/error.css";
+import "./css/dropdown.css";
+
 /* Images */
 import Group from "./images/group-icon.png";
 import Star from "./images/star.png";
 import Train from "./images/train.png";
 import Dollar from "./images/dollar.png";
 
+/* React */
 import ReactDOM from "react-dom";
 import React from "react";
 import Navigation from "./components/Navigation";
@@ -38,7 +42,9 @@ const stops = [
 
 ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
 
-ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
+const toggleError = () => {
+  ReactDOM.unmountComponentAtNode(error);
+};
 
 function logout(e) {
   ReactDOM.render(
@@ -57,54 +63,7 @@ firebase.auth().onAuthStateChanged((user) => {
 const signOut = document.getElementById("signOut");
 signOut.addEventListener("click", logout);
 
-//ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
-
-/* SAVE FOR LATER FOR WHEN IMPLEMENTING POP UP BUBBLES
-//Add function to each main menu for show/hide sub menus
-var main1selected = true;
-wheel1.navItems[0].navigateFunction = function () {
-  if (!main1selected) {
-    wheel2.navItems[0].navItem.hide();
-    wheel2.navItems[1].navItem.hide();
-  } else {
-    wheel2.navItems[0].navItem.show();
-    wheel2.navItems[1].navItem.show();
-  }
-  main1selected = !main1selected;
-};
-
-var main2selected = true;
-wheel1.navItems[1].navigateFunction = function () {
-  if (!main2selected) {
-    wheel2.navItems[2].navItem.hide();
-    wheel2.navItems[3].navItem.hide();
-  } else {
-    wheel2.navItems[2].navItem.show();
-    wheel2.navItems[3].navItem.show();
-  }
-  main2selected = !main2selected;
-};
-*/
-// var main3selected = true;
-// wheel1.navItems[2].navigateFunction = function () {
-//   if (!main3selected) {
-//     wheel2.navItems[4].navItem.hide();
-//     wheel2.navItems[5].navItem.hide();
-//   } else {
-//     wheel2.navItems[4].navItem.show();
-//     wheel2.navItems[5].navItem.show();
-//   }
-//   main3selected = !main3selected;
-// };
-
 const wheel = new wheelnav("wheelDiv");
-
-// DropMarker
-/*
-wheel.markerPathFunction = markerPath().DropMarker;
-wheel.markerAttr = { fill: "#333", stroke: "#333" };
-wheel.markerEnable = true;
-*/
 
 // Start wheelnav with no selection
 wheel.selectedNavItemIndex = null;
@@ -157,31 +116,58 @@ wheel.lineHoverAttr = { stroke: "#00a1de", "stroke-width": 3 };
 wheel.titleHoverAttr = { fill: "#00a1de", stroke: "none" };
 
 // You can set attributes over selected state.
-wheel.sliceSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
-wheel.lineSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
-wheel.titleSelectedAttr = { fill: "#9CF" };
+//wheel.sliceSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
+//wheel.lineSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
+//wheel.titleSelectedAttr = { fill: "#9CF" };
+
+//Add function to each main menu for show/hide sub menus
+const menu1 = document.querySelector(".content-0");
+const menu2 = document.querySelector(".content-1");
+const menu3 = document.querySelector(".content-2");
+const menu4 = document.querySelector(".content-3");
+
+wheel.navItems[0].navigateFunction = function () {
+  menu1.style.display = "inline-block";
+  menu2.style.display = "none";
+  menu3.style.display = "none";
+  menu4.style.display = "none";
+};
+
+wheel.navItems[1].navigateFunction = function () {
+  menu1.style.display = "none";
+  menu2.style.display = "inline-block";
+  menu3.style.display = "none";
+  menu4.style.display = "none";
+};
+
+wheel.navItems[2].navigateFunction = function () {
+  menu1.style.display = "none";
+  menu2.style.display = "none";
+  menu3.style.display = "inline-block";
+  menu4.style.display = "none";
+};
+
+wheel.navItems[3].navigateFunction = function () {
+  menu1.style.display = "none";
+  menu2.style.display = "none";
+  menu3.style.display = "none";
+  menu4.style.display = "inline-block";
+};
 
 wheel.refreshWheel();
 
-/* FAILED TEXT ATTEMPTS
-const path = document.querySelectorAll("path");
-console.log(path);
-
-//const span = document.createElement("span");
-//span.classList.add("tooltiptext");
-//span.textContent = "Hi";
-path[0].setAttribute("title", "hi");
-//path[0].appendChild(span);
-
+// Give radial menu images a cursor pointer when hovered over
 const images = document.querySelectorAll("image");
-console.log(images);
-images[0].setAttribute("title", "hi");
-
-images.forEach((image) => {
-  const span = document.createElement("span");
-  span.classList.add("tooltiptext");
-  span.textContent = "Hi";
-  image.classList.add("tooltip");
-  image.appendChild(span);
+Array.from(images).forEach((image) => {
+  image.style.cursor = "pointer";
 });
-*/
+
+// Hide sub menus
+const hide = () => {
+  menu1.style.display = "none";
+  menu2.style.display = "none";
+  menu3.style.display = "none";
+  menu4.style.display = "none";
+};
+
+document.body.addEventListener("click", hide, true);

@@ -51,9 +51,9 @@
   backface-visibility: hidden; /* fixes shaking in animation */
   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 800;
-  letter-spacing: 10px;
+  letter-spacing: 6px;
   line-height: 1.1;
 }
 

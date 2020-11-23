@@ -18,8 +18,6 @@ const Navigation = ({ stops }) => {
   return (
     <>
       {stops.map((stop, index) => {
-        console.log(index + " ");
-        console.log(stops.length + "\n");
         if (index < stops.length - 1) {
           return (
             <React.Fragment key={stop.link}>
@@ -28,7 +26,6 @@ const Navigation = ({ stops }) => {
             </React.Fragment>
           );
         }
-        console.log("last!");
         return (
           <React.Fragment key={stop.link}>
             <StopEnd name={stop.name} link={stop.link} />

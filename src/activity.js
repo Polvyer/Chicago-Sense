@@ -1,27 +1,20 @@
-/* Needed for Bootstrap (remove if you don't want to use bootstrap) */
-//import "bootstrap";
-//import "./scss/bootstrap.scss";
-
-/* CSS (import as many CSS files as you need) */
-//import "./css/reset.css";
-
-/* Images (import as many images as you need) */
-//import Chicago from "./images/chicago.png";
-
+/* Firebase */
 import { f as firebase, db } from "./firebase";
 
 /* CSS */
 import "./css/reset.css";
 import "./css/activity.css";
 import "./css/signout.css";
-import "./css/navigation.css";
 import "./css/error.css";
+import "./css/navigation.css";
+
 /* Images */
 import Food from "./images/Food.png";
 import Hotels from "./images/Hotels.png";
 import Tourism from "./images/Tourism.png";
 import Entertain from "./images/Entertain.png";
 
+/* React */
 import ReactDOM from "react-dom";
 import React from "react";
 import Navigation from "./components/Navigation";
@@ -43,6 +36,10 @@ const stops = [
 ];
 
 ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
+
+const toggleError = () => {
+  ReactDOM.unmountComponentAtNode(error);
+};
 
 function logout(e) {
   ReactDOM.render(
@@ -126,38 +123,16 @@ wheel.lineSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
 wheel.titleSelectedAttr = { fill: "#9CF" };
 
 wheel.navItems[0].navigateFunction = function () {
-  setTimeout("window.open('./priority.html?activity=food', '_top')", 2000);
+  window.location = "./priority.html";
 };
 wheel.navItems[1].navigateFunction = function () {
-  setTimeout("window.open('./404.html', '_top')", 2000);
+  window.location = "./priority.html";
 };
 wheel.navItems[2].navigateFunction = function () {
-  setTimeout("window.open('./404.html', '_top')", 2000);
+  window.location = "./priority.html";
 };
 wheel.navItems[3].navigateFunction = function () {
-  setTimeout("window.open('priority.html?activity=entertain', '_top')", 2000);
+  window.location = "./priority.html";
 };
+
 wheel.refreshWheel();
-
-/* FAILED TEXT ATTEMPTS
-const path = document.querySelectorAll("path");
-console.log(path);
-
-//const span = document.createElement("span");
-//span.classList.add("tooltiptext");
-//span.textContent = "Hi";
-path[0].setAttribute("title", "hi");
-//path[0].appendChild(span);
-
-const images = document.querySelectorAll("image");
-console.log(images);
-images[0].setAttribute("title", "hi");
-
-images.forEach((image) => {
-  const span = document.createElement("span");
-  span.classList.add("tooltiptext");
-  span.textContent = "Hi";
-  image.classList.add("tooltip");
-  image.appendChild(span);
-});
-*/
