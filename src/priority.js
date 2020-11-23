@@ -1,7 +1,10 @@
+import { f as firebase, db } from "./firebase";
+
 /* CSS */
 import "./css/reset.css";
 import "./css/activity.css";
 import "./css/navigation.css";
+import "./css/signout.css";
 import "./css/error.css";
 /* Images */
 import Group from "./images/group-icon.png";
@@ -9,6 +12,8 @@ import Star from "./images/star.png";
 import Train from "./images/train.png";
 import Dollar from "./images/dollar.png";
 
+import ReactDOM from "react-dom";
+import React from "react";
 import Navigation from "./components/Navigation";
 import Error from "./components/Error";
 
@@ -21,7 +26,36 @@ const stops = [
     name: "Plan Trip",
     link: "./date_select.html",
   },
+  {
+    name: "Activity",
+    link: "./activity.html",
+  },
+  {
+    name: "Priority",
+    link: "./Priority.html",
+  },
 ];
+
+ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
+
+ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
+
+function logout(e) {
+  ReactDOM.render(
+    <Error errorMessage="Signing out" toggleError={toggleError} />,
+    document.getElementById("error")
+  );
+  firebase.auth().signOut();
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    window.location = "./index.html";
+  }
+});
+
+const signOut = document.getElementById("signOut");
+signOut.addEventListener("click", logout);
 
 //ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
 
