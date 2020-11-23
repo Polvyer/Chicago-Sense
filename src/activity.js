@@ -8,9 +8,12 @@
 /* Images (import as many images as you need) */
 //import Chicago from "./images/chicago.png";
 
+import { f as firebase, db } from "./firebase";
+
 /* CSS */
 import "./css/reset.css";
 import "./css/activity.css";
+import "./css/signout.css";
 import "./css/navigation.css";
 import "./css/error.css";
 /* Images */
@@ -40,6 +43,23 @@ const stops = [
 ];
 
 ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
+
+function logout(e) {
+  ReactDOM.render(
+    <Error errorMessage="Signing out" toggleError={toggleError} />,
+    document.getElementById("error")
+  );
+  firebase.auth().signOut();
+}
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (!user) {
+    window.location = "./index.html";
+  }
+});
+
+const signOut = document.getElementById("signOut");
+signOut.addEventListener("click", logout);
 
 const wheel = new wheelnav("wheelDiv");
 
