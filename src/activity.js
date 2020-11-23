@@ -1,12 +1,29 @@
 /* CSS */
 import "./css/reset.css";
 import "./css/activity.css";
-
+import "./css/navigation.css";
+import "./css/error.css";
 /* Images */
 import Group from "./images/group-icon.png";
 import Star from "./images/star.png";
 import Train from "./images/train.png";
 import Dollar from "./images/dollar.png";
+
+import Navigation from "./components/Navigation";
+import Error from "./components/Error";
+
+const stops = [
+  {
+    name: "Home",
+    link: "./home.html",
+  },
+  {
+    name: "Plan Trip",
+    link: "./date_select.html",
+  },
+];
+
+//ReactDOM.render(<Navigation stops={stops} />, document.getElementById("root"));
 
 /* SAVE FOR LATER FOR WHEN IMPLEMENTING POP UP BUBBLES
 //Add function to each main menu for show/hide sub menus
@@ -33,19 +50,18 @@ wheel1.navItems[1].navigateFunction = function () {
   }
   main2selected = !main2selected;
 };
-
-var main3selected = true;
-wheel1.navItems[2].navigateFunction = function () {
-  if (!main3selected) {
-    wheel2.navItems[4].navItem.hide();
-    wheel2.navItems[5].navItem.hide();
-  } else {
-    wheel2.navItems[4].navItem.show();
-    wheel2.navItems[5].navItem.show();
-  }
-  main3selected = !main3selected;
-};
 */
+// var main3selected = true;
+// wheel1.navItems[2].navigateFunction = function () {
+//   if (!main3selected) {
+//     wheel2.navItems[4].navItem.hide();
+//     wheel2.navItems[5].navItem.hide();
+//   } else {
+//     wheel2.navItems[4].navItem.show();
+//     wheel2.navItems[5].navItem.show();
+//   }
+//   main3selected = !main3selected;
+// };
 
 const wheel = new wheelnav("wheelDiv");
 
@@ -81,12 +97,12 @@ wheel.clickModeRotate = false;
 // Scale the icon size of SVGs
 wheel.sliceTransformFunction = sliceTransform().CustomTitleTransform;
 wheel.sliceTransformCustom = new sliceTransformCustomization();
-wheel.sliceTransformCustom.scaleString = "s2.25";
+wheel.sliceTransformCustom.scaleString = "s3.50";
 
 // Scale the icon size of the SVG selected
 wheel.sliceSelectedTransformFunction = sliceTransform().CustomTitleTransform;
 wheel.sliceSelectedTransformCustom = new sliceTransformCustomization();
-wheel.sliceSelectedTransformCustom.scaleString = "s3.25";
+wheel.sliceSelectedTransformCustom.scaleString = "s4.00";
 
 // The title of navItem can be text and icon. The icon can be svg or image.
 wheel.createWheel([
