@@ -44,7 +44,7 @@
 }
 
 .nav-stop-outer-dot-end {
-  background-color: orangered;
+  background-color: orange;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -78,7 +78,7 @@
 }
 
 .nav-stop-text-end {
-  color: orangered;
+  color: orange;
   margin-top: 0.09em;
   margin-left: 3px;
   font-size: 1.4rem;
@@ -92,7 +92,7 @@
 }
 
 .v2 {
-  border-left: 10px solid orangered;
+  border-left: 10px solid orange;
   height: 25px;
   margin-left: 14.5px;
 }
