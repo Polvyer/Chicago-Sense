@@ -62,7 +62,7 @@
 }
 
 .nav-stop-inner-dot-end {
-  background-color: red;
+  background-color: orangered;
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -87,6 +87,12 @@
 
 .vl {
   border-left: 10px solid #00a1de;
+  height: 25px;
+  margin-left: 14.5px;
+}
+
+.v2 {
+  border-left: 10px solid orangered;
   height: 25px;
   margin-left: 14.5px;
 }

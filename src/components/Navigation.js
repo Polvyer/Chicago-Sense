@@ -6,8 +6,12 @@ const Navigation = ({ stops }) => {
   //const amt = amt + 1;
   const addLine = (index) => {
     if (stops.length !== index + 1) {
+      if (index == stops.length - 2) {
+        return <div className="v2"></div>;
+      }
       return <div className="vl"></div>;
     }
+
     return null;
   };
 
