@@ -1,23 +1,13 @@
-/* Needed for Bootstrap (remove if you don't want to use bootstrap) */
-//import "bootstrap";
-//import "./scss/bootstrap.scss";
-
-/* CSS (import as many CSS files as you need) */
-//import "./css/reset.css";
-
-/* Images (import as many images as you need) */
-//import Chicago from "./images/chicago.png";
-
 /* CSS */
 import "./css/reset.css";
 import "./css/activity.css";
 import "./css/navigation.css";
 import "./css/error.css";
 /* Images */
-import Food from "./images/Food.png";
-import Hotels from "./images/Hotels.png";
-import Tourism from "./images/Tourism.png";
-import Entertain from "./images/Entertain.png";
+import Group from "./images/group-icon.png";
+import Star from "./images/star.png";
+import Train from "./images/train.png";
+import Dollar from "./images/dollar.png";
 
 import Navigation from "./components/Navigation";
 import Error from "./components/Error";
@@ -60,19 +50,18 @@ wheel1.navItems[1].navigateFunction = function () {
   }
   main2selected = !main2selected;
 };
-
-var main3selected = true;
-wheel1.navItems[2].navigateFunction = function () {
-  if (!main3selected) {
-    wheel2.navItems[4].navItem.hide();
-    wheel2.navItems[5].navItem.hide();
-  } else {
-    wheel2.navItems[4].navItem.show();
-    wheel2.navItems[5].navItem.show();
-  }
-  main3selected = !main3selected;
-};
 */
+// var main3selected = true;
+// wheel1.navItems[2].navigateFunction = function () {
+//   if (!main3selected) {
+//     wheel2.navItems[4].navItem.hide();
+//     wheel2.navItems[5].navItem.hide();
+//   } else {
+//     wheel2.navItems[4].navItem.show();
+//     wheel2.navItems[5].navItem.show();
+//   }
+//   main3selected = !main3selected;
+// };
 
 const wheel = new wheelnav("wheelDiv");
 
@@ -117,10 +106,10 @@ wheel.sliceSelectedTransformCustom.scaleString = "s4.00";
 
 // The title of navItem can be text and icon. The icon can be svg or image.
 wheel.createWheel([
-  `imgsrc:${Food}`,
-  `imgsrc:${Hotels}`,
-  `imgsrc:${Tourism}`,
-  `imgsrc:${Entertain}`,
+  `imgsrc:${Group}`,
+  `imgsrc:${Dollar}`,
+  `imgsrc:${Star}`,
+  `imgsrc:${Train}`,
 ]);
 
 // Every navItem element has an Attr property.
@@ -138,18 +127,6 @@ wheel.sliceSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
 wheel.lineSelectedAttr = { stroke: "#9CF", "stroke-width": 4 };
 wheel.titleSelectedAttr = { fill: "#9CF" };
 
-wheel.navItems[0].navigateFunction = function () {
-  setTimeout("window.open('./food.html', '_top')", 2000);
-};
-wheel.navItems[1].navigateFunction = function () {
-  setTimeout("window.open('./404.html', '_top')", 2000);
-};
-wheel.navItems[2].navigateFunction = function () {
-  setTimeout("window.open('./404.html', '_top')", 2000);
-};
-wheel.navItems[3].navigateFunction = function () {
-  setTimeout("window.open('musical.html', '_top')", 2000);
-};
 wheel.refreshWheel();
 
 /* FAILED TEXT ATTEMPTS
