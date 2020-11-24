@@ -1,0 +1,125 @@
+.header {
+  height: 100vh; /* out of 100 */
+  background-image: linear-gradient(
+      to right,
+      rgba(67, 48, 133, 0.8),
+      rgba(58, 65, 62, 0.692)
+    ),
+    url("../images/chicago.jpg");
+  background-size: cover; /* try to fit width of viewport or element */
+  background-position: top; /* top of img stays atop container */
+  position: relative;
+}
+
+img {
+  display: inline-block;
+}
+
+.text-box {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /* fixes shaking in animation */
+  margin-bottom: 10px;
+
+  display: block;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 15px;
+}
+
+#container {
+  margin: 0 auto;
+  height: 70vh;
+  width: 30rem;
+  background-color: hsl(0, 100%, 25%, 0.4);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+#container2 {
+  margin: 0 auto;
+  height: 70vh;
+  width: 30rem;
+  background-color: hsl(0, 100%, 25%, 0.4);
+  text-align: center;
+}
+
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  width: 10rem;
+  padding: 15px 40px;
+  display: inline;
+  border-radius: 50px;
+  transition: all 0.2s;
+  position: relative;
+  border: none;
+}
+
+.btn:hover {
+  outline: none;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: white;
+  color: black;
+}
+
+.pages {
+  text-align: center;
+}
+
+.pages button {
+  padding: 10px 20px;
+  border-radius: 20%;
+  cursor: pointer;
+  margin-top: 1vh;
+  border: none;
+  display: inline-block;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+.pages button:hover {
+  text-decoration: underline;
+}
+
+#back {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1vh;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.men:link,
+.men:visited {
+  text-decoration: none;
+  color: teal;
+  display: inline-block; /* allows text-align to center it */
+  position: relative;
+}
+
+.men:hover {
+  text-decoration: underline;
+}

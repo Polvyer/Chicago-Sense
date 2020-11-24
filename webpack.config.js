@@ -4,23 +4,20 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const PrettierPlugin = require('prettier-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // helps make output files readable for devs
+  mode: 'production', // helps make output files readable for devs
   entry: {
     index: './src/index.js',
     register: './src/register.js',
     home: './src/home.js',
-    browse: './src/browse.js',
     activity: './src/activity.js',
     priority: './src/priority.js',
     food: './src/food.js',
-    plan_trip: './src/plan_trip.js',
-    musical: './src/musical.js',
     date_select: './src/date_select.js',
     results: './src/results.js',
-    pizza: './src/pizza.js',
     404: './src/404.js',
   },
-  devtool: 'inline-source-map', // makes it easier to track down errors and warnings
+  devtool: 'source-map',
+  //devtool: 'inline-source-map', // makes it easier to track down errors and warnings
   devServer: {
     contentBase: './src/public',
     watchContentBase: true,
@@ -35,12 +32,6 @@ module.exports = {
       template: './src/public/404.html',
     }),
     new HtmlWebpackPlugin({
-      filename: 'pizza.html',
-      chunks: ['pizza'],
-      favicon: './src/images/bean_icon.png',
-      template: './src/public/pizza.html',
-    }),
-    new HtmlWebpackPlugin({
       filename: 'results.html',
       chunks: ['results'],
       favicon: './src/images/bean_icon.png',
@@ -51,18 +42,6 @@ module.exports = {
       chunks: ['date_select'],
       favicon: './src/images/bean_icon.png',
       template: './src/public/date_select.html',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'musical.html',
-      chunks: ['musical'],
-      favicon: './src/images/bean_icon.png',
-      template: './src/public/musical.html',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'plan_trip.html',
-      chunks: ['plan_trip'],
-      favicon: './src/images/bean_icon.png',
-      template: './src/public/plan_trip.html',
     }),
     new HtmlWebpackPlugin({
       filename: 'food.html',
@@ -81,12 +60,6 @@ module.exports = {
       chunks: ['activity'],
       favicon: './src/images/bean_icon.png',
       template: './src/public/activity.html',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'browse.html',
-      chunks: ['browse'],
-      favicon: './src/images/bean_icon.png',
-      template: './src/public/browse.html',
     }),
     new HtmlWebpackPlugin({
       filename: 'home.html',
